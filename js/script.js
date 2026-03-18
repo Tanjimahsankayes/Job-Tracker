@@ -1,3 +1,18 @@
+let interviewList = [];
+let rejectedList = [];
+
+let total = document.getElementById("total-count");
+let interviewCount = document.getElementById("interview-count");
+let rejectedCount = document.getElementById("rejected-count");
+const jobCountText = document.getElementById("job-count");
+
+const allCardSection = document.getElementById("all-job");
+const interviewContainer = document.getElementById("interview-container");
+const rejectContainer = document.getElementById("reject-container");
+
+const interviewEmpty = document.getElementById("interview-empty");
+const rejectEmpty = document.getElementById("reject-empty");
+
 function updateStatusButton(card, status) {
   const statusBtn = card.querySelector(".status-btn");
   if (!statusBtn) return;
@@ -20,21 +35,6 @@ function updateStatusButton(card, status) {
     statusBtn.classList.add("btn-red-500", "text-red-600", "border-red-600");
   }
 }
-
-let interviewList = [];
-let rejectedList = [];
-
-let total = document.getElementById("total-count");
-let interviewCount = document.getElementById("interview-count");
-let rejectedCount = document.getElementById("rejected-count");
-const jobCountText = document.getElementById("job-count");
-
-const allCardSection = document.getElementById("all-job");
-const interviewContainer = document.getElementById("interview-container");
-const rejectContainer = document.getElementById("reject-container");
-
-const interviewEmpty = document.getElementById("interview-empty");
-const rejectEmpty = document.getElementById("reject-empty");
 
 function calculateCount() {
   const totalJobs = allCardSection.children.length;
@@ -140,7 +140,7 @@ function attachCardLogic(card) {
   rejectedBtn.addEventListener("click", function () {
     if (card.dataset.status === "rejected") return;
     if (allCardSection.contains(card)) {
-      if (card.dataset.status) return; 
+      if (card.dataset.status) return;
 
       card.dataset.status = "rejected";
 
