@@ -17,19 +17,22 @@
 
 </head>
 
-<body class="bg-[#F8FAFC] space-y-5">
-    <header class="container mx-auto space-y-5">
+<body class="bg-slate-100 space-y-5">
+    <header class="w-[80%] mx-auto space-y-5">
         <h2 class="text-[38px] font-bold pt-10">Job Application Tracker</h2>
         <div class="flex justify-between gap-5">
-            <div id="total" class=" bg-base-50 w-full p-4 rounded-md shadow-sm">
+            <div id="total"
+                class=" bg-base-100 w-full p-4 rounded-md shadow-sm hover:-translate-y-1 transition duration-320">
                 <h3>Total</h3>
                 <h2 id="total-count" class="font-bold text-[24px]">0</h2>
             </div>
-            <div id="interview" class="bg-base-50  w-full p-4 rounded-md shadow-sm">
+            <div id="interview"
+                class="bg-base-100  w-full p-4 rounded-md shadow-sm hover:-translate-y-1 transition duration-320">
                 <h3>Interview</h3>
                 <h2 id="interview-count" class="font-bold text-[24px] text-green-500">0</h2>
             </div>
-            <div id="rejected" class="bg-base-50  w-full p-4 rounded-md shadow-sm">
+            <div id="rejected"
+                class="bg-base-100  w-full p-4 rounded-md shadow-sm hover:-translate-y-1 transition duration-320">
                 <h3>Rejected</h3>
                 <h2 id="rejected-count" class="font-bold text-[24px] text-red-500">0</h2>
             </div>
@@ -37,18 +40,18 @@
     </header>
 
     <main>
-        <section class="container mx-auto space-y-5 sm:space-y-2">
+        <section class="w-[80%] mx-auto space-y-5 sm:space-y-2">
             <div class="jobs-heading flex justify-between">
                 <h2 class="text-[26px] font-semibold">Available Jobs</h2>
-                <h3>8 jobs</h3>
+                <h3 id="job-count">8 jobs</h3>
             </div>
             <div class="flex gap-6 pb-4">
                 <button onclick="showOnly('all-job', this)" class="btn btn-primary filter-btn p-5">All</button>
                 <button onclick="showOnly('inter-job', this)" class="btn filter-btn">Interview</button>
                 <button onclick="showOnly('reject-job', this)" class="btn filter-btn">Rejected</button>
             </div>
-        
-        
+
+
             <div id="all-job" class="card space-y-7">
                 <div id="card-1"
                     class="bg-base-100 shadow-sm rounded-sm p-5 space-y-3 hover:-translate-y-1 transition duration-320">
@@ -67,16 +70,18 @@
                         •
                         $130,000 - $175,000</p>
                     <div class="">
-                        <button class="btn">Not Applied</button>
+                        <button class="btn status-btn">Not Applied</button>
                     </div>
                     <p>Build cross-platform mobile applications using React Native. Work on products used by millions of
                         users worldwide.</p>
                     <div class="flex gap-4">
-                        <div id="interview-btn" class="btn">INTERVIEW</div>
-                        <div id="rejected-btn" class="btn">REJECTED</div>
+                        <div id="" class="btn interview-btn bg-transparent text-green-600 border border-green-600">
+                            INTERVIEW</div>
+                        <div id="" class="btn rejected-btn bg-transparent text-red-600 border border-red-600">REJECTED
+                        </div>
                     </div>
                 </div>
-        
+
                 <div id="card-2"
                     class="bg-base-100 shadow-sm rounded-sm p-5 space-y-3 hover:-translate-y-1 transition duration-320">
                     <div class="title-div flex justify-between">
@@ -96,17 +101,19 @@
                         $80,000 - $120,000
                     </p>
                     <div class="">
-                        <button class="btn">Not Applied</button>
+                        <button class="btn status-btn">Not Applied</button>
                     </div>
                     <p>Create stunning web experiences for high-profile clients. Must have portfolio and experience with
                         modern web design
                         trends.</p>
                     <div class="flex gap-4">
-                        <div id="interview-btn" class="btn">INTERVIEW</div>
-                        <div id="rejected-btn" class="btn">REJECTED</div>
+                        <div id="" class="btn interview-btn bg-transparent text-green-600 border border-green-600">
+                            INTERVIEW</div>
+                        <div id="" class="btn rejected-btn bg-transparent text-red-600 border border-red-600">REJECTED
+                        </div>
                     </div>
                 </div>
-        
+
                 <div id="card-3"
                     class="bg-base-100 shadow-sm rounded-sm p-5 space-y-3 hover:-translate-y-1 transition duration-320">
                     <div class="title-div flex justify-between">
@@ -126,17 +133,19 @@
                         $125,000 - $165,000
                     </p>
                     <div class="">
-                        <button class="btn">Not Applied</button>
+                        <button class="btn status-btn">Not Applied</button>
                     </div>
                     <p>Transform complex data into compelling visualizations. Required skills: D3.js, React, and strong
                         analytical thinking.
                     </p>
                     <div class="flex gap-4">
-                        <div id="interview-btn" class="btn">INTERVIEW</div>
-                        <div id="rejected-btn" class="btn">REJECTED</div>
+                        <div id="" class="btn interview-btn bg-transparent text-green-600 border border-green-600">
+                            INTERVIEW</div>
+                        <div id="" class="btn rejected-btn bg-transparent text-red-600 border border-red-600">REJECTED
+                        </div>
                     </div>
                 </div>
-        
+
                 <div id="card-4"
                     class="bg-base-100 shadow-sm rounded-sm p-5 space-y-3 hover:-translate-y-1 transition duration-320">
                     <div class="title-div flex justify-between">
@@ -156,17 +165,20 @@
                         $140,000 - $190,000
                     </p>
                     <div class="">
-                        <button class="btn">Not Applied</button>
+                        <button class="btn status-btn">Not Applied</button>
                     </div>
-                    <p>Design and maintain scalable backend systems using Python and AWS. Work with modern DevOps practices
+                    <p>Design and maintain scalable backend systems using Python and AWS. Work with modern DevOps
+                        practices
                         and cloud
                         infrastructure.</p>
                     <div class="flex gap-4">
-                        <div id="interview-btn" class="btn">INTERVIEW</div>
-                        <div id="rejected-btn" class="btn">REJECTED</div>
+                        <div id="" class="btn interview-btn bg-transparent text-green-600 border border-green-600">
+                            INTERVIEW</div>
+                        <div id="" class="btn rejected-btn bg-transparent text-red-600 border border-red-600">REJECTED
+                        </div>
                     </div>
                 </div>
-        
+
                 <div id="card-5"
                     class="bg-base-100 shadow-sm rounded-sm p-5 space-y-3 hover:-translate-y-1 transition duration-320">
                     <div class="title-div flex justify-between">
@@ -186,17 +198,20 @@
                         $110,000 - $150,000
                     </p>
                     <div class="">
-                        <button class="btn">Not Applied</button>
+                        <button class="btn status-btn">Not Applied</button>
                     </div>
-                    <p>Create beautiful and functional user interfaces for our suite of products. Strong design skills and
+                    <p>Create beautiful and functional user interfaces for our suite of products. Strong design skills
+                        and
                         frontend development
                         expertise required.</p>
                     <div class="flex gap-4">
-                        <div id="interview-btn" class="btn">INTERVIEW</div>
-                        <div id="rejected-btn" class="btn">REJECTED</div>
+                        <div id="" class="btn interview-btn bg-transparent text-green-600 border border-green-600">
+                            INTERVIEW</div>
+                        <div id="" class="btn rejected-btn bg-transparent text-red-600 border border-red-600">REJECTED
+                        </div>
                     </div>
                 </div>
-        
+
                 <div id="card-6"
                     class="bg-base-100 shadow-sm rounded-sm p-5 space-y-3 hover:-translate-y-1 transition duration-320">
                     <div class="title-div flex justify-between">
@@ -216,18 +231,20 @@
                         $130,000 - $170,00
                     </p>
                     <div class="">
-                        <button class="btn">Not Applied</button>
+                        <button class="btn status-btn">Not Applied</button>
                     </div>
                     <p>Build enterprise applications with JavaScript and modern frameworks. We offer competitive
                         compensation, health
                         insurance, and professional development opportunities.</p>
                     <div class="flex gap-4">
-                        <div id="interview-btn" class="btn">INTERVIEW</div>
-                        <div id="rejected-btn" class="btn">REJECTED</div>
+                        <div id="" class="btn interview-btn bg-transparent text-green-600 border border-green-600">
+                            INTERVIEW</div>
+                        <div id="" class="btn rejected-btn bg-transparent text-red-600 border border-red-600">REJECTED
+                        </div>
                     </div>
                 </div>
-        
-                <div id="card-6"
+
+                <div id="card-7"
                     class="bg-base-100 shadow-sm rounded-sm p-5 space-y-3 hover:-translate-y-1 transition duration-320">
                     <div class="title-div flex justify-between">
                         <div>
@@ -235,7 +252,7 @@
                             <h4 class="text-gray-500 text-[16px]">Full Stack Engineer</h4>
                         </div>
                         <div class="icons-div cursor-pointer ">
-                            <i class="fa-regular fa-trash-can" onclick="deleteCard('card-6')"></i>
+                            <i class="fa-regular fa-trash-can" onclick="deleteCard('card-7')"></i>
                         </div>
                     </div>
                     <p class="text-gray-500 text-[14px]">
@@ -246,18 +263,20 @@
                         $120,000 - $160,000
                     </p>
                     <div class="">
-                        <button class="btn">Not Applied</button>
+                        <button class="btn status-btn">Not Applied</button>
                     </div>
                     <p>Join our fast-growing startup and work on our core platform. Experience with Node.js and React
                         required. Great benefits
                         and equity package included.</p>
                     <div class="flex gap-4">
-                        <div id="interview-btn" class="btn">INTERVIEW</div>
-                        <div id="rejected-btn" class="btn">REJECTED</div>
+                        <div id="" class="btn interview-btn bg-transparent text-green-600 border border-green-600">
+                            INTERVIEW</div>
+                        <div id="" class="btn rejected-btn bg-transparent text-red-600 border border-red-600">REJECTED
+                        </div>
                     </div>
                 </div>
-        
-                <div id="card-7"
+
+                <div id="card-8"
                     class="bg-base-100 shadow-sm rounded-sm p-5 space-y-3 hover:-translate-y-1 transition duration-320">
                     <div class="title-div flex justify-between">
                         <div>
@@ -265,7 +284,7 @@
                             <h4 class="text-gray-500 text-[16px]">Senior Frontend Developer</h4>
                         </div>
                         <div class="icons-div cursor-pointer ">
-                            <i class="fa-regular fa-trash-can" onclick="deleteCard('card-7')"></i>
+                            <i class="fa-regular fa-trash-can" onclick="deleteCard('card-8')"></i>
                         </div>
                     </div>
                     <p class="text-gray-500 text-[14px]">
@@ -276,40 +295,44 @@
                         $130,000 - $175,000
                     </p>
                     <div class="">
-                        <button class="btn">Not Applied</button>
+                        <button class="btn status-btn">Not Applied</button>
                     </div>
-                    <p>We are looking for an experienced Frontend Developer to build scalable web applications using React
+                    <p>We are looking for an experienced Frontend Developer to build scalable web applications using
+                        React
                         and TypeScript. You
                         will work with a talented team on cutting-edge projects.</p>
                     <div class="flex gap-4">
-                        <div id="interview-btn" class="btn">INTERVIEW</div>
-                        <div id="rejected-btn" class="btn">REJECTED</div>
+                        <div id="" class="btn interview-btn bg-transparent text-green-600 border border-green-600">
+                            INTERVIEW</div>
+                        <div id="" class="btn rejected-btn bg-transparent text-red-600 border border-red-600">REJECTED
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
-        
-        <section id="inter-job" class="container mx-auto space-y-5 sm:space-y-2 hidden">
-            <div class="card container mx-auto bg-base-50 shadow-sm w-full rounded-sm py-20 text-center">
-                <div class="text-center mx-auto">
+
+        <section id="inter-job" class="w-[80%] mx-auto space-y-5 sm:space-y-2 bg-base-100 hidden">
+            <div id="interview-empty" class="card w-[80%] rounded-md mx-auto bg-base-50 py-20 text-center">
+                <div class="text-center mx-auto flex justify-center">
                     <img src="jobs.png" alt="">
                 </div>
                 <h2 class="font-bold text-[32px] ">No jobs available</h2>
                 <p class="text-gray-500">Check back soon for new job opportunities</p>
             </div>
-        
+            <div id="interview-container" class="space-y-7"></div>
         </section>
-        
-        
-        <section id="reject-job" class="container mx-auto space-y-5 sm:space-y-2 hidden">
-            <div class="card container mx-auto bg-base-50 shadow-sm w-full rounded-sm py-20 text-center">
-                <div class="text-center mx-auto">
+
+
+        <section id="reject-job" class="w-[80%] rounded-md mx-auto space-y-5 sm:space-y-2 bg-base-100 hidden">
+            <div id="reject-empty" class="card w-[80%] mx-auto bg-base-50 rounded-md py-20 text-center">
+                <div class="text-center mx-auto flex justify-center">
                     <img src="jobs.png" alt="">
                 </div>
                 <h2 class="font-bold text-[32px] ">No jobs available</h2>
                 <p class="text-gray-500">Check back soon for new job opportunities</p>
             </div>
-        </section>  
+            <div id="reject-container" class="space-y-7"></div>
+        </section>
     </main>
 
     <script src="js/machine.js"></script>
