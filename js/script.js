@@ -106,28 +106,25 @@ function attachCardLogic(card) {
 
   interviewBtn.addEventListener("click", function () {
     if (card.dataset.status === "interview") return;
+
+    rejectedList = rejectedList.filter((c) => c.id !== card.id);
+    const rejectCard = [...rejectContainer.children].find(
+      (c) => c.id === card.id,
+    );
+    if (rejectCard) rejectCard.remove();
+
+    card.dataset.status = "interview";
+
     if (allCardSection.contains(card)) {
-      if (card.dataset.status) return;
+      const clone = card.cloneNode(true);
 
-      card.dataset.status = "interview";
-      if (!interviewList.some((c) => c.id === card.id)) {
-        const clone = card.cloneNode(true);
+      updateStatusButton(card, "interview");
+      updateStatusButton(clone, "interview");
 
-        updateStatusButton(card, "interview");
-        updateStatusButton(clone, "interview");
-
-        interviewContainer.appendChild(clone);
-        interviewList.push(clone);
-        attachCardLogic(clone);
-      }
+      interviewContainer.appendChild(clone);
+      interviewList.push(clone);
+      attachCardLogic(clone);
     } else {
-      if (interviewList.includes(card)) return;
-
-      rejectedList = rejectedList.filter((c) => c !== card);
-      if (card.dataset.status === "rejected") rejectContainer.removeChild(card);
-
-      card.dataset.status = "interview";
-
       updateStatusButton(card, "interview");
 
       interviewContainer.appendChild(card);
@@ -139,30 +136,25 @@ function attachCardLogic(card) {
 
   rejectedBtn.addEventListener("click", function () {
     if (card.dataset.status === "rejected") return;
+
+    interviewList = interviewList.filter((c) => c.id !== card.id);
+    const interCard = [...interviewContainer.children].find(
+      (c) => c.id === card.id,
+    );
+    if (interCard) interCard.remove();
+
+    card.dataset.status = "rejected";
+
     if (allCardSection.contains(card)) {
-      if (card.dataset.status) return;
+      const clone = card.cloneNode(true);
 
-      card.dataset.status = "rejected";
+      updateStatusButton(card, "rejected");
+      updateStatusButton(clone, "rejected");
 
-      if (!rejectedList.some((c) => c.id === card.id)) {
-        const clone = card.cloneNode(true);
-
-        updateStatusButton(card, "rejected");
-        updateStatusButton(clone, "rejected");
-
-        rejectContainer.appendChild(clone);
-        rejectedList.push(clone);
-        attachCardLogic(clone);
-      }
+      rejectContainer.appendChild(clone);
+      rejectedList.push(clone);
+      attachCardLogic(clone);
     } else {
-      if (rejectedList.includes(card)) return;
-
-      interviewList = interviewList.filter((c) => c !== card);
-      if (card.dataset.status === "interview")
-        interviewContainer.removeChild(card);
-
-      card.dataset.status = "rejected";
-
       updateStatusButton(card, "rejected");
 
       rejectContainer.appendChild(card);
