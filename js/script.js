@@ -86,16 +86,16 @@ function deleteCard(cardId) {
 
   if (card) card.remove();
 
-  interviewList.forEach((c) => {
-    if (c.id === cardId) c.remove();
+  interviewList.forEach((card) => {
+    if (card.id === cardId) card.remove();
   });
 
-  rejectedList.forEach((c) => {
-    if (c.id === cardId) c.remove();
+  rejectedList.forEach((card) => {
+    if (card.id === cardId) card.remove();
   });
 
-  interviewList = interviewList.filter((c) => c.id !== cardId);
-  rejectedList = rejectedList.filter((c) => c.id !== cardId);
+  interviewList = interviewList.filter((card) => card.id !== cardId);
+  rejectedList = rejectedList.filter((card) => card.id !== cardId);
 
   calculateCount();
 }
@@ -107,9 +107,9 @@ function attachCardLogic(card) {
   interviewBtn.addEventListener("click", function () {
     if (card.dataset.status === "interview") return;
 
-    rejectedList = rejectedList.filter((c) => c.id !== card.id);
+    rejectedList = rejectedList.filter((card) => card.id !== card.id);
     const rejectCard = [...rejectContainer.children].find(
-      (c) => c.id === card.id,
+      (card) => card.id === card.id,
     );
     if (rejectCard) rejectCard.remove();
 
@@ -137,9 +137,9 @@ function attachCardLogic(card) {
   rejectedBtn.addEventListener("click", function () {
     if (card.dataset.status === "rejected") return;
 
-    interviewList = interviewList.filter((c) => c.id !== card.id);
+    interviewList = interviewList.filter((card) => card.id !== card.id);
     const interCard = [...interviewContainer.children].find(
-      (c) => c.id === card.id,
+      (card) => card.id === card.id,
     );
     if (interCard) interCard.remove();
 
